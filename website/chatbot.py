@@ -3,12 +3,14 @@ import uuid
 from openai import OpenAI
 import base64
 import markdown
+import os  # ✅ for env vars
 
 chatbot = Blueprint('chatbot', __name__)
 
+# ✅ Use env variable for API key
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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"
+    api_key=os.getenv("OPENROUTER_API_KEY")  # <-- Replace hardcoded key
 )
 
 conversations = {}
@@ -17,14 +19,10 @@ conversations = {}
 def chat():
     return render_template("chatbot.html")
 
-
 @chatbot.route('/chatbot-response', methods=['POST'])
 def handle_chat():
-    """Process user input and generate chatbot responses."""
-
-    # ✅ FIX: assign `data` first
     data = request.json if request.is_json else request.form
-    model = data.get('model', 'meta-llama/llama-3.2-11b-vision-instruct:free')  # Default if not provided
+    model = data.get('model', 'meta-llama/llama-3.2-11b-vision-instruct:free')
 
     session_id = session.get('session_id')
     if not session_id or session_id not in conversations:
@@ -62,7 +60,7 @@ def handle_chat():
 
         bot_response = completion.choices[0].message.content
 
-        # Convert Markdown to HTML
+        # Markdown to HTML
         bot_response_html = markdown.markdown(
             bot_response,
             extensions=['extra', 'sane_lists']
@@ -77,11 +75,8 @@ def handle_chat():
         print(f"Error: {str(e)}")
         return jsonify({'error': 'Failed to get response'}), 500
 
-
-# --- Speech recognition endpoint ---
 @chatbot.route('/speech-to-text', methods=['POST'])
 def speech_to_text():
-    """Accepts an audio file and returns recognized text."""
     audio_file = request.files.get('audio')
     if not audio_file:
         return jsonify({'error': 'No audio file provided'}), 400
