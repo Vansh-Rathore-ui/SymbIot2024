@@ -14,6 +14,8 @@ client = OpenAI(
 )
 
 conversations = {}
+print("LOADED KEY:", os.getenv("OPENROUTER_API_KEY"))
+
 
 @chatbot.route('/chatbot', methods=['GET', 'POST'])
 def chat():
