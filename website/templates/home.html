@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBuddy!</title>
+    <!-- <link rel="stylesheet" href="styles-home.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-home.css') }}">
+    <link rel="icon" type="image/png" href="../static/webicon.png">
+</head>
+<body>
+       <!-- Hamburger Menu -->
+      <div class="menu-container" onclick="toggleMenu()">
+        <span class="hamburger-icon">☰</span>
+      </div>
+      <div class="hamburger-menu" id="hamburgerMenu">
+       <div class="Navigation">Navigation</div> 
+        <a href="/" class="hamburger-items">Home</a>
+        <a href='/chatbot' class="hamburger-items">Start a Project</a>
+        <a href='/about_us' class="hamburger-items">More About Us</a><!-- Login Modal -->
+        </div>
+      </div>
+
+      <div class="main">
+      <div class ="logo"><a href="/"><img src="../static/logo.png" alt="NA" height="45px" ></a></div>
+      <div class="container">
+      <div class="welcome-text" >WELCOME TO CHATBUDDY!</div>
+      <div class="description">
+        Unlock the power of AI-driven learning with ChatBuddy!—your interactive chatbot for insightful image explanations
+         and seamless speech conversion. Elevate your educational experience through smart, accessible technology.
+      </div>
+      <div class="buttons">
+        <button class="button" onclick="window.location.href='/chatbot';">START A PROJECT</button>
+        <button class="button" onclick="window.location.href='/about_us';">ABOUT US</button>
+      </div>
+       </div>
+       <button class="scroll-down" onclick="scrollToNext()"><span style="color: rgb(138, 206, 36); padding-right: 5px; padding-bottom: 5px; font-weight: 700;"> ⌵ </span>SCROLL DOWN</button>
+      </div>
+  
+   <div class="next">
+    <div class="second"><div class="next-content">   <div class="hello">Hello There</div>
+     <div class="hello2">We are ChatBuddy!</div>
+     <div class="row section-header has-bottom-sep aos-init aos-animate">
+    </div>
+    <div class="p1">The Image-Based Chatbot is an AI-powered assistant designed to understand and respond to visual inputs. Users can upload an image and engage in conversation about its contents. Whether it's identifying objects, describing scenes, or answering visual questions, the chatbot delivers intelligent, human-like responses to enhance user interaction with images.
+
+      <div class="p2">The Conversational Chatbot is a Flask-based AI system integrating OpenAI GPT and OpenAIRouter APIs for intelligent, real-time responses. It features a modular backend with Flask Blueprints, session handling via UUIDs, and a dynamic frontend using HTML, CSS, and JavaScript. Markdown rendering and secure data handling enhance user interaction.
+               .</div>
+              </div>
+  </div>
+    
+    </div> 
+
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+    <button id="backToTop" title="Back to Top"><b>^</b><span style="color: black;">-</span></button>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-aboutus.css') }}">
+    <link rel="icon" type="image/png" href="../static/webicon.png">
+</head>
+<body>
+     <!-- Hamburger Menu -->
+     <div class="menu-container" onclick="toggleMenu()">
+        <span class="hamburger-icon">☰</span>
+      </div>
+      <div class="hamburger-menu" id="hamburgerMenu">
+       <div class="Navigation">Navigation</div> 
+        <a href="/" class="hamburger-items">Home</a>
+        <a href='/chatbot' class="hamburger-items" >Start a Project</a>
+        <a href='/about_us' class="hamburger-items">More About Us</a>
+      </div>
+
+    <!-- Header with logo -->
+    <header class="logo">
+        <a href='/'>
+            <img src="../static/logo.png" alt=" Logo" height="45px">
+        </a>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="heading">
+            <h1 class="teamname">Ctrl Alt Delete</h1>
+        </div>
+        <p class="text">Meet the team behind the magic!</p>
+
+        <!-- Team Members -->
+        <div class="team">
+
+            <div class="member">
+                <img src="../static/V.jpg" alt="Vansh Rathore">
+                <h2>Vansh Rathore</h2>
+                <div class="socials">
+                    <span class="linkedin">
+                        <a href="
+                        https://www.linkedin.com/in/vansh-r-918b15275/" target="_blank" rel="noopener noreferrer">
+                            <img src="../static/linkedin.png" alt="Vansh's LinkedIn">
+                        </a>
+                    </span>   
+                    <span class="instagram"> 
+                        <a href="https://www.instagram.com/vansh.__.rathore/" target="_blank" rel="noopener noreferrer">
+                            <img src="../static/instagram.png" alt="Vansh's Instagram">
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="member">
+                <img src="../static/A.jpg" alt="Agrim Kedia">
+                <h2>Agrim Kedia</h2>
+                <div class="socials">
+                    <span class="linkedin">
+                        <a href="https://www.linkedin.com/in/agrim-kedia-219800310/" target="_blank" rel="noopener noreferrer">
+                            <img src="../static/linkedin.png" alt="Agrim's LinkedIn">
+                        </a>
+                    </span> 
+                    <span class="instagram">  
+                        <a href="https://www.instagram.com/_agrim___/" target="_blank" rel="noopener noreferrer">
+                            <img src="../static/instagram.png" alt="Agrim's Instagram">
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="member">
+                <img src="../static/H.jpg" alt="Harshil Jad">
+                <h2>Harshil Jad</h2>
+                <div class="socials">
+                    <span class="linkedin">
+                        <a href=" https://in.linkedin.com/in/harshil-jad-613130362" target="_blank" rel="noopener noreferrer">
+                            <img src="../static/linkedin.png" alt="Harshil's LinkedIn">
+                        </a>
+                    </span> 
+                    <span class="instagram">
+                        <a href="https://www.instagram.com/harshiljad/" target="_blank" rel="noopener noreferrer">
+                            <img src="../static/instagram.png" alt="Harshil's Instagram">
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="member">
+                <img src="../static/L.jpg" alt="Lakshya Srivastava">
+                <h2>Lakshya Srivastava</h2>
+                <div class="socials"> 
+                    <span class="linkedin">
+                        <a href="https://www.linkedin.com/in/lakshya-kumar-srivastava-15b1a9331/" target="_blank" rel="noopener noreferrer">
+                            <img src="../static/linkedin.png" alt="Lakshya's LinkedIn">
+                        </a>
+                    </span>
+                    <span class="instagram">  
+                        <a href="https://www.instagram.com/lxxtz._/" target="_blank" rel="noopener noreferrer">
+                            <img src="../static/instagram.png" alt="Lakshya's Instagram">
+                        </a>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script
+    type="text/javascript"
+    src="{{ url_for('static', filename='script-aboutus.js') }}"
+></script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+/* === Fonts === */
+@import url('https://fonts.googleapis.com/css2?family=Road+Rage&family=Staatliches&family=DM+Serif+Text:ital@0;1&family=Alata&family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Allerta+Stencil&family=Anaheim&family=Abel&family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* === Animations === */
+@keyframes slideFromBottomPageLoad {
+  from {
+    transform: translateY(60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromBottomOnScroll {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide {
+  animation: slideFromBottomOnScroll 1.5s ease-out forwards;
+}
+
+/* === General Styling === */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-size: cover;
+  color: white;
+  overflow-x: hidden;
+}
+
+.main {
+  background: url('background-home.png');
+}
+
+.next {
+  background-color: rgb(43, 160, 41);
+}
+
+/* === Logo === */
+.logo {
+  height: 30px;
+  width: 60px;
+  padding: 50px 0 45px 50px;
+}
+
+/* === Content Styling === */
+.container {
+  text-align: left;
+  padding: 50px 20px;
+}
+
+.welcome-text {
+  padding-top: 80px;
+  font-size: 15px;
+  font-family: "Anaheim", sans-serif;
+  margin-bottom: 7px;
+  color: grey;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-left: 250px;
+  font-weight: 1000;
+  animation: slideFromBottomPageLoad 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.description {
+  font-family: "DM Serif Text", serif;
+  text-align: left;
+  font-size: 2.2rem;
+  max-width: 670px;
+  padding-left: 250px;
+  padding-bottom: 50px;
+  animation: slideFromBottomPageLoad 1.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.buttons {
+  margin-bottom: 90px;
+  padding-left: 250px;
+  animation: slideFromBottomPageLoad 2.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  background-color: black;
+  margin: 3px;
+  color: white;
+  border: 2px solid rgb(10, 147, 38);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.button:hover {
+  color: black;
+  background-color: rgb(140, 237, 116);
+}
+
+/* Scroll Down Button */
+.scroll-down {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-family: "Staatliches", sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s ease;
+}
+
+/* Next Section Content */
+.hello {
+  padding-top: 150px;
+  text-align: center;
+  color: black;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: "Allerta Stencil", sans-serif;
+  letter-spacing: 2.5px;
+}
+
+.hello2 {
+  font-family: "Anonymous Pro", monospace;
+  padding-top: 6px;
+  text-align: center;
+  font-size: 60px;
+  padding-bottom: 18px;
+  padding-left: 15px;
+}
+
+.row.section-header.has-bottom-sep::before {
+  content: "";
+  display: block;
+  width: 700px;
+  height: 2px;
+  background-color: rgba(232, 230, 230, 0.5);
+  margin: 20px auto 0 auto;
+}
+
+.p1,
+.p2 {
+  text-align: center;
+  color: rgb(22, 15, 15);
+  font-size: 25px;
+  padding-top: 40px;
+  max-width: 750px;
+  margin: 0 auto;
+  font-family: "Abel", sans-serif;
+  font-weight: 750;
+}
+
+.p2 {
+  padding-bottom: 110px;
+}
+
+/* Back to Top Button */
+#backToTop {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 30px;
+  right: 35px;
+  z-index: 100;
+  font-size: 25px;
+  background-color: black;
+  color: rgb(43, 160, 41);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+#backToTop:hover {
+  transform: scale(1.05);
+}
+
+/* Hamburger Menu */
+.hamburger-icon {
+  color: white;
+  font-size: 24px;
+  line-height: 1;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  cursor: pointer;
+  display: block;
+  transition: color 0.3s;
+  font-family: 'DM Serif Display', 'Saira', 'Inter', Arial, sans-serif;
+}
+.hamburger-icon:hover {
+  color: rgb(73, 170, 54);
+}
+
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.85);
+  box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+  border-left: 1.5px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  flex-direction: column;
+  z-index: 999;
+  overflow-y: auto;
+  transition: right 0.5s ease-in-out;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 60px;
+  font-family: 'DM Serif Display', 'Saira', 'Inter', Arial, sans-serif;
+}
+.hamburger-menu.active {
+  right: 0;
+}
+
+.hamburger-items {
+  color: white;
+  padding: 15px 25px;
+  font-family: 'Saira', 'Inter', Arial, sans-serif;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: 1.08rem;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 12px rgba(73, 170, 54, 0.10), 0 1px 0 #222;
+  border-radius: 7px;
+}
+
+.hamburger-menu a {
+  text-decoration: none;
+  display: block;
+  padding: 12px 25px;
+  font-family: 'Saira', 'Inter', Arial, sans-serif;
+  font-size: 1.08rem;
+  font-weight: 500;
+  letter-spacing: 1.1px;
+  border-radius: 7px;
+  transition: all 0.3s cubic-bezier(.4,2,.6,1);
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  text-shadow: 0 2px 12px rgba(73, 170, 54, 0.10), 0 1px 0 #222;
+}
+.hamburger-menu a:hover {
+  background-color: rgba(73, 170, 54, 0.2);
+  color: rgb(73, 170, 54);
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-shadow: 0 4px 18px rgba(73, 170, 54, 0.18), 0 1px 0 #222;
+}
+
+.text {
+  color: white;
+}
+
+.Navigation {
+  color: rgb(22, 231, 19);
+  padding: 20px 25px;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: 'DM Serif Display', 'Times New Roman', Times, serif;
+  letter-spacing: 1.5px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+  font-weight: 700;
+  text-shadow: 0 2px 12px rgba(73, 170, 54, 0.13), 0 1px 0 #222;
+}
+
+/*Scrol bar*/
+/* Applies to the whole page */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: black;
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+/* Thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: rgba(52, 251, 12, 0.4);
+  border-radius: 3px;
+  border: 2px solid rgba(10, 10, 10, 0.85); /* matches your menu bg */
+}
+
+/* Thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(73, 170, 54, 0.7);
+}
