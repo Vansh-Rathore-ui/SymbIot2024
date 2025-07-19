@@ -8,7 +8,7 @@ chatbot = Blueprint('chatbot', __name__)
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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"
+    api_key="OPENROUTER_API_KEY"
 )
 
 conversations = {}
